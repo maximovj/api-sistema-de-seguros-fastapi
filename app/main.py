@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.database import engine, Base
 from app.config import settings
-from app.routers import customers, policies
+from app.routers import customers, policies, assets
 import uvicorn
 
 # Crear tablas en la base de datos
@@ -30,7 +30,8 @@ app.add_middleware(
 )
 
 app.include_router(customers.router, prefix=f"{settings.ROOT_PATH}", tags=["Clientes"])
-app.include_router(policies.router, prefix="/api/v1", tags=["Pólizas"])
+app.include_router(policies.router, prefix=f"{settings.ROOT_PATH}", tags=["Pólizas"])
+app.include_router(assets.router, prefix=f"{settings.ROOT_PATH}", tags=["Bienes"])
 
 # Rutas Básicas
 @app.get("/")
