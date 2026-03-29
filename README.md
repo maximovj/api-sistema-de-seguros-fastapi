@@ -40,8 +40,16 @@ Iniciar servidor
 $ uvicorn app.main:app --reload
 ```
 
+Crear datos de pruebas en SQLite
+
+```shell
+$ python init_db.py
+```
+
 ## Vista Previa
 
 ![preview_01.png](/screenshots/preview_01.png)
 
 ![preview_02.png](/screenshots/preview_02.png)
+
+![preview_03.png](/screenshots/preview_03.png)
