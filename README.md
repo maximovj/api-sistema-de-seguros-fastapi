@@ -32,3 +32,9 @@ $ .env/Scripts/active.bat # (En Windows)
 $ pip install -r requirements.txt
 ```
 
+Iniciar servidor
+
+```shell
+$ uvicorn app.main:app --reload
+```
+

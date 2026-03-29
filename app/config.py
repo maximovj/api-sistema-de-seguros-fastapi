@@ -1,5 +1,4 @@
 from pydantic_settings import BaseSettings
-from pydantic import Optional
 
 class Settings(BaseSettings):
     DATABASE_URL: str = "sqlite:///./app.db"
