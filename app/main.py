@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from app.database import engine, Base
+from app.config import settings
 import uvicorn
 
 # Crear tablas en la base de datos
@@ -10,8 +11,12 @@ app = FastAPI(
     title="Sistema de Seguros API",
     description="API para gestión de seguros",
     version="1.0.0",
-    docs_url="/docs",      # Swagger UI
-    redoc_url="/redoc"     # ReDoc
+    root_path=settings.ROOT_PATH,
+    debug=settings.DEBUG,
+    # En producción desactivar las rutas
+    docs_url="/docs" if settings.isDev else None,
+    redoc_url="/redoc" if settings.isDev else None,
+    openapi_url="/openapi.json" if settings.isDev else None
 )
 
 # Rutas Básicas
@@ -20,6 +25,7 @@ async def root():
     return {
         "message": "Sistema de Seguros API",
         "version": "1.0.0",
+        "root_path": f"{settings.ROOT_PATH}",
         "endpoints": {
             "docs": "/docs",
             "health": "/health",
