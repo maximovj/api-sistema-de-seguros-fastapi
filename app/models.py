@@ -78,4 +78,4 @@ class Payment(Base):
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     
     # Relación
-    policy = relationship("Payment", back_populates="payments")
+    policy = relationship("Policy", back_populates="payments")
