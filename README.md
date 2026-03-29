@@ -53,3 +53,5 @@ $ python init_db.py
 ![preview_02.png](/screenshots/preview_02.png)
 
 ![preview_03.png](/screenshots/preview_03.png)
+
+![preview_04.png](/screenshots/preview_04.png)
