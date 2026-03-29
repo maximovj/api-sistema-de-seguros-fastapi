@@ -2,8 +2,9 @@
 
 Este es un sistema (API) de seguros con FastAPI y SQLite3 usando SQLAlchemy
 
-# Estructura del proyecto
+## Estructura del proyecto
 
+```shell
 sistema-seguros/
 ├── app/
 │   ├── __init__.py
@@ -21,9 +22,10 @@ sistema-seguros/
 ├── requirements.txt
 ├── .env
 └── .gitignore
+```
 
 
-# Comandos 
+## Comandos 
 
 Instalar todas las dependencias
 
@@ -38,3 +40,8 @@ Iniciar servidor
 $ uvicorn app.main:app --reload
 ```
 
+## Vista Previa
+
+![preview_01.png](/screenshots/preview_01.png)
+
+![preview_02.png](/screenshots/preview_02.png)
