@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from app.database import engine, Base
 from app.config import settings
 import uvicorn
@@ -17,6 +18,14 @@ app = FastAPI(
     docs_url="/docs" if settings.isDev else None,
     redoc_url="/redoc" if settings.isDev else None,
     openapi_url="/openapi.json" if settings.isDev else None
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=settings.ALLOW_ORIGINS if settings.isProd else ["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 # Rutas Básicas
